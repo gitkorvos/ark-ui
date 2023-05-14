@@ -1,0 +1,115 @@
+
+
+.navbar {
+  position:fixed;
+  width:220px;
+  height:100%;
+  background: var(--primary-color);
+  border-right: 1px solid var(--secondary-color);
+  font-family:"Rubik";
+  top:0;
+}
+
+.navbar .navbar-logo {
+  width:220px;
+  text-align: center;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+
+.navbar .navbar-logo img {
+  height:60px;
+  position:relative;
+  top:5px;
+}
+
+.navbar-section ul {
+  list-style: none;
+  width:200px;
+  text-align:left;
+}
+
+.navbar-section ul li {
+  line-height: 50px;
+}
+
+.navbar-section a {
+  transition:0.3s ease-in-out;
+  display: block;
+  font-size: 15px;
+  color: var(--text-color);
+  text-decoration: none;
+  padding-left:10px;
+}
+
+.navbar-section a:hover {
+  background: var(--accent-color-hover);
+  border-radius:4px;
+}
+
+.navbar-section a i {
+  position:relative;
+  top:5px;
+}
+
+.navbar-section {
+  margin-left:10px;
+  border-top: 1px solid var(--secondary-color);
+  border-bottom: 1px solid var(--secondary-color);
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+.navbar-section p {
+  color: var(--text-color-secondary);
+  font-weight: 200;
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-left:10px;
+}
+
+.navbar-right {
+  position:absolute;
+  bottom:0;
+}
+
+.discord-button {
+  padding: 8px 16px;
+  border-radius: 1000px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  font-size: 16px;
+  margin-left:5px;
+}
+
+.discord-button:hover {
+  background-color: var(--accent-color-hover);
+}
+
+/* Font Awesome Icons */
+.navbar-section a i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.fas.fa-home:before {
+  content: "\f015";
+}
+
+.fas.fa-info-circle:before {
+  content: "\f05a";
+}
+
+.fas.fa-envelope:before {
+  content: "\f0e0";
+}
+
+.fas.fa-search:before {
+  content: "\f002";
+}
+
+.navbar-logo {
+  border-bottom:0.5px solid #68686811;
+  background-image: linear-gradient(to bottom, #1a222a, #1a222a 61%, rgb(103 129 255 / 10%));
+}

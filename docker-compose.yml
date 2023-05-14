@@ -1,0 +1,44 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    volumes:
+      - './frontend:/app:delegated'
+      - '/app/node_modules'
+    environment:
+      - NODE_ENV=development
+    command: npm run serve
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - './backend:/app:delegated'
+      - '/app/node_modules'
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: your_postgres_user
+      POSTGRES_PASSWORD: your_postgres_password
+      POSTGRES_DB: your_postgres_db
+      
+    volumes:
+      - 'pgdata:/var/lib/postgresql/data'
+
+volumes:
+  pgdata:

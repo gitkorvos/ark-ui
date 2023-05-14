@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap');
+
+
+.section-header {
+  color: var(--text-color-secondary);
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.serverList h1 {
+  color: var(--text-color);
+  font-family: "Rubik";
+  font-weight: 500;
+}
+
+.serverList li  {
+  padding: 15px;
+  margin-top: 10px;
+  color: var(--text-color);
+  font-family: "Rubik";
+  font-weight: 300;
+  cursor:pointer;
+  transition:0.3s ease-in-out;
+}
+
+
+.serverList ul {
+  list-style: none;
+}
+
+input:focus-visible {
+  outline: 0px;
+  border-left: 2px solid lightpink !important;
+}
+
+.serverList .searchBar input {
+  transition: 0.2s ease-in-out;
+  padding: 12px;
+  border: 1px solid var(--text-color-secondary);
+  background: var(--primary-color);
+  color: var(--text-color);
+  width: 50%;
+}
+
+.serverList .pagination {
+  position: sticky;
+  bottom: 10px;
+  background: #0d1116;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.serverList .pagination span {
+  color:#fff;
+  line-height: 40px;
+}
+
+.serverList .pagination .pagination-buttons button {
+  transition:0.1s ease-in-out;
+  border-radius:1000px;
+  padding-left:20px;
+  padding-right:20px;
+  padding:10px;
+  min-width:100px;
+  border:0px;
+}
+
+.serverList .pagination .pagination-buttons button:hover {
+  background: var(--accent-color-hover);
+}
+
+.serverList .pagination i {
+  position: relative;
+  top:2px;
+}
+
+
+.serverList .pagination button {
+  background: var(--accent-color);
+  color: var(--text-color);
+}
+
+
+.serverList .pagination button:disabled {
+  background: #2b2e54 !important;
+  color: #888;
+}
+
+
+.searchInputs {
+  display: flex;
+  align-items: center;
+}
+
+.searchInputs select {
+  background: var(--primary-color);
+  border: 1px solid var(--text-color-secondary);
+  color: var(--text-color);
+  appearance: none;
+}
+
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap:10px;
+}
+
+.pagination {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mapSelector {
+  margin-left: 10px;
+  padding: 12px;
+}
+
+.serverListContainer {
+  display:flex;
+  flex-direction: row;
+  gap:20px;
+}
+
+.serverList {
+  padding: 20px;
+  background: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  flex-grow:2;
+}
+
+.serverFilters {
+  height:400px;
+  background: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  padding:20px;
+  flex-grow:2;
+}
+
+.server-info {
+  margin-top:15px;
+  margin-bottom:8px;
+}
+
+.server-info span {
+  background:rgba(255,255,255,0.05);
+  border-radius:1000px;
+  padding:8px;
+  padding-left:12px;
+  padding-right:12px;
+  margin-right:5px;
+  color:var(--text-color-primary);
+
+}
+
+.server-info span:first-child {
+  margin-left:-5px;
+}
+
+.serverList li {
+  position:relative !important;
+  border-radius:4px;
+}
+
+.server-status {
+  position:absolute;
+  right:13px;
+  top:30px;
+  background:rgba(255, 255, 255, 0.05);
+  border:1px solid rgba(255, 255, 255, 0.1);
+  padding:5px;
+  border-radius: 4px;
+
+}
+
+.server-status .server-status-online {
+  color:var(--server-status-button-online-color);
+}
+
+.server-status .server-status-offline {
+  color:var(--server-status-button-offline-color);
+}
+
+.serverList li.server-status-online {
+  background-image:var(--server-status-gradient-online);
+}
+
+.serverList li.server-status-offline {
+  background-image:var(--server-status-gradient-offline);
+}
+
+
+.server-status i {
+  top: 3px;
+  margin-right: 5px;
+  position: relative;
+}
+
+.server-info i {
+  top: 2px;
+  margin-right: 2px;
+  position: relative;
+}
+
+
