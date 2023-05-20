@@ -31,18 +31,20 @@
   list-style: none;
 }
 
-input:focus-visible {
-  outline: 0px;
-  border-left: 2px solid lightpink !important;
-}
-
 .serverList .searchBar input {
   transition: 0.2s ease-in-out;
-  padding: 12px;
-  border: 1px solid var(--text-color-secondary);
-  background: var(--primary-color);
+  font-family:Rubik;
+  padding: 20px;
+  background: #0d1116 !important;
   color: var(--text-color);
-  width: 50%;
+  width: 100%;
+  color:#fff;
+  border:0px;
+  border-radius: 4px; 
+}
+
+.serverList .searchBar input:focus-visible {
+  outline:0;
 }
 
 .serverList .pagination {
@@ -139,12 +141,21 @@ input:focus-visible {
   border: 1px solid var(--secondary-color);
   border-radius: 4px;
   padding:20px;
-  flex-grow:2;
+  flex-grow:0;
+  width:300px;
 }
 
 .server-info {
   margin-top:15px;
-  margin-bottom:8px;
+  margin-bottom:20px;
+}
+
+.server-last-updated {
+  position: absolute;
+  bottom: 7px;
+  left: 15px;
+  color: rgb(110 109 109);
+  font-size: 12px;
 }
 
 .server-info span {
@@ -167,12 +178,16 @@ input:focus-visible {
   border-radius:4px;
 }
 
+.serverList li strong {
+  font-weight:500;
+}
+
 .server-status {
   position:absolute;
   right:13px;
-  top:30px;
+  top:37px;
   background:rgba(255, 255, 255, 0.05);
-  border:1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgb(255 255 255 / 6%);
   padding:5px;
   border-radius: 4px;
 
@@ -207,4 +222,47 @@ input:focus-visible {
   position: relative;
 }
 
+.serverFilters p {
+  color:#fff;
+  margin-top:20px;
+  margin-bottom:10px;
+}
 
+
+.multiselect, .multiselect .is-active {
+  background:#0d1116 !important;
+  border:0px !important;
+  outline:0px !important;
+  box-shadow:none !important;
+}
+
+
+.multiselect-tags-search {
+  border:0px !important;
+  background:#0d1116 !important;
+}
+
+.multiselect-option:hover {
+  color:#fff !important;
+  background: var(--accent-color) !important;
+}
+
+.multiselect-tag {
+  background: var(--accent-color) !important;
+}
+
+.multiselect-dropdown {
+  background:#0d1116 !important;
+  border:0px !important;
+  color:#fff !important;
+}
+
+input:focus-visible {
+  border:0px !important;
+}
+
+
+.multiselect-option.is-pointed {
+  background:none !important;
+  color:#fff !important;
+}

@@ -7,7 +7,7 @@ const path = require("path");
 
 const sequelize = require('./config/database');
 const Server = require("./models/Server");
-//require("dotenv").config({ path: path.resolve(__dirname, `.env.${process.env.NODE_ENV}`) });
+const fetchDataAndUpdateServerModel = require("./tasks/serverUpdaterTask"); // Assuming updateServers is the exported function
 
 const app = express();
 
@@ -30,6 +30,8 @@ app.use((err, req, res, next) => {
   res.status(500).send("Something went wrong");
 });
 
+fetchDataAndUpdateServerModel()
+const task = setInterval(fetchDataAndUpdateServerModel, 600000); // 10 Mins
 
 (async () => {
   try {

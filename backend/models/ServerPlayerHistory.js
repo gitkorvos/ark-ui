@@ -1,34 +1,24 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const Server = require('../models/Server'); 
 
-const Server = sequelize.define('server', {
+const ServerPlayerHistory = sequelize.define('server_player_history', {
   id: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
     primaryKey: true,
     allowNull: false,
   },
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
   player_count: {
     type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-  map: {
-    type: DataTypes.STRING,
     allowNull: false,
   },
   timestamp: {
     type: DataTypes.DATE,
     allowNull: false,
   },
-},
-  {
-    tableName: 'servers',
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
 });
 
-module.exports = Server;
+ServerPlayerHistory.belongsTo(Server, { foreignKey: 'serverId' });
+
+module.exports = ServerPlayerHistory;
