@@ -1,12 +1,41 @@
 
 
 .navbar {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-220px);
+  z-index:98;
+}
+.navbar-active {
+  transform: translateX(0);
+}
+
+.navbar-toggle {
+  z-index:99;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border:0;
+  color:#fff;
+  background:var(--primary-color);
+  font-size:18px;
+  height:60px;
+  width:60px;
+  border-radius:1000px;
+}
+
+.navbar-toggle i {
+  line-height:60px;
+}
+
+
+
+.navbar {
   position:fixed;
   width:220px;
   height:100%;
   background: var(--primary-color);
   border-right: 1px solid var(--secondary-color);
-  font-family:"Rubik";
+  font-family: "Rubik", serif;
   top:0;
 }
 

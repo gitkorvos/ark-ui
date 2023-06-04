@@ -1,48 +1,64 @@
 <template>
-  <div class="container">
-    <h1 class="section-header">Server List</h1>
+  <div class="page">
 
-    <div class="serverListContainer">
-      <div class="serverList">
-        <div class="searchBar">
-          <div class="searchInputs">
-            <input
+    <div class="layout-header-section">
+      <h1 class="section-header">Server List</h1>
+    </div>
+
+    <div class="layout-content-section">
+
+      <div class="server-list-search-bar">
+        <i class="lni lni-search-alt"></i>
+          <input
               type="text"
               v-model="searchTerm"
-              placeholder="Search Server(s)..."
-            />
-          </div>
-        </div>
+              placeholder="Start typing to search list..."
+          />
+      </div>
+
+      <div class="server-list">
         <ul>
           <li
             v-for="server in displayedServers"
             :key="server.id"
             :class="[
-              'hvr-grow',
               {
                 'server-status-online': isServerOnline(server.updated_at),
                 'server-status-offline': !isServerOnline(server.updated_at),
               },
             ]"
           >
-            <strong>{{ server.name }}</strong>
-            <div class="server-info">
-              <span
-                ><i class="lni lni-users"></i>
-                {{ server.player_count }}/70</span
-              >
-              <span><i class="lni lni-map"></i> {{ server.map }}</span>
-              <span><i class="lni lni-information"></i> {{ server.id }}</span>
-              <br/>
-              <div class="server-last-updated">Last Updated &bull; {{ formatTimestamp(server.timestamp) }}</div>
-            </div>
-            
-              <div class="server-status">
-                <span :class="{'server-status-online': isServerOnline(server.updated_at), 'server-status-offline': !isServerOnline(server.updated_at),}">
-                  <i class="lni lni-pulse"></i>{{ getServerStatusText(server.updated_at) }}
-                </span>
-              </div>
+            <router-link :to="`/server/${server.id}`" class="no-link-styles">
+              <div>
+                <strong>{{ server.name }}</strong>
+                <div class="server-info">
+                  <span
+                    ><i class="lni lni-users"></i>
+                    {{ server.player_count }}/70</span
+                  >
+                  <span><i class="lni lni-map"></i> {{ server.map }}</span>
 
+                  <br />
+                  <div class="server-last-updated">
+                    Last Updated &bull; {{ formatTimestamp(server.timestamp) }}
+                  </div>
+                </div>
+
+                <div class="server-status">
+                  <span
+                    :class="{
+                      'server-status-online': isServerOnline(server.updated_at),
+                      'server-status-offline': !isServerOnline(
+                        server.updated_at
+                      ),
+                    }"
+                  >
+                    <i class="lni lni-pulse"></i
+                    >{{ getServerStatusText(server.updated_at) }}
+                  </span>
+                </div>
+              </div>
+            </router-link>
           </li>
         </ul>
 
@@ -67,7 +83,7 @@
         </div>
       </div>
 
-      <div class="serverFilters">
+      <div class="server-filters">
         <div>
           <p>Map Selection</p>
           <Multiselect
@@ -122,9 +138,8 @@ import "hover.css/css/hover-min.css";
 import axios from "axios";
 import Multiselect from "@vueform/multiselect";
 
-import { formatDistanceToNow } from 'date-fns';
-import { enUS } from 'date-fns/locale'; // Import the desired locale if needed
-
+import { formatDistanceToNow } from "date-fns";
+import { enUS } from "date-fns/locale"; // Import the desired locale if needed
 
 export default {
   components: {
@@ -163,20 +178,23 @@ export default {
   },
   methods: {
     formatTimestamp(timestamp) {
-      return formatDistanceToNow(new Date(timestamp), { addSuffix: true, locale: enUS });
+      return formatDistanceToNow(new Date(timestamp), {
+        addSuffix: true,
+        locale: enUS,
+      });
     },
 
     isServerOnline(updatedAt) {
-    const oneHourInMillis = 10 * 60 * 1000 // Convert 1 hour to milliseconds
-    const currentTime = new Date().getTime(); // Get the current time in milliseconds
+      const oneHourInMillis = 10 * 60 * 1000; // Convert 1 hour to milliseconds
+      const currentTime = new Date().getTime(); // Get the current time in milliseconds
 
-    const updatedAtTime = new Date(updatedAt).getTime(); // Convert updatedAt string to a Date object and get its time in milliseconds
+      const updatedAtTime = new Date(updatedAt).getTime(); // Convert updatedAt string to a Date object and get its time in milliseconds
 
-    return currentTime - updatedAtTime <= oneHourInMillis;
-  },
-  getServerStatusText(updatedAt) {
-    return this.isServerOnline(updatedAt) ? "Online" : "Offline";
-  },
+      return currentTime - updatedAtTime <= oneHourInMillis;
+    },
+    getServerStatusText(updatedAt) {
+      return this.isServerOnline(updatedAt) ? "Online" : "Offline";
+    },
     async fetchData() {
       try {
         const response = await axios.get(

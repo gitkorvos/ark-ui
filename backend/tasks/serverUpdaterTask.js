@@ -23,11 +23,19 @@ async function updateServerModel(serverData) {
       server.timestamp = new Date(),
       await server.save();
 
-      await ServerPlayerHistory.create({
-        serverId: server.id,
-        player_count: serverData.NumPlayers,
-        timestamp: new Date(),
+      const previousEntry = await ServerPlayerHistory.findOne({
+        where: { serverId: server.id },
+        order: [['timestamp', 'DESC']],
       });
+
+      const currentTime = new Date();
+      if (!previousEntry || (currentTime - previousEntry.timestamp) > 3600000) {
+        await ServerPlayerHistory.create({
+          serverId: server.id,
+          player_count: serverData.NumPlayers,
+          timestamp: currentTime,
+        });
+      }
 
     } else {
 

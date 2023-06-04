@@ -1,7 +1,29 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
+import App from './App.vue';
 
-import Popper from "vue3-popper";
+import ServerList from '@/components/ServerList.vue';
+import TestServer from '@/components/TestServer.vue';
 
-createApp(App).mount('#app')
-App.component("PopperToolTip", Popper);
+const app = createApp(App);
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: ServerList
+    },
+    {
+      path: '/server/:id',
+      name: 'ServerDetails',
+      component: TestServer,
+      
+    },
+  ],
+});
+
+app.use(router);
+
+app.mount('#app');

@@ -1,22 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap');
 
 
-.section-header {
-  color: var(--text-color-secondary);
-  font-weight: 300;
-  text-transform: uppercase;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  font-size: 25px;
+.server-list {
+  flex-basis:var(--layout-section-half-width);
+  flex-grow:2;
 }
 
-.serverList h1 {
+.server-filters {
+  flex-basis:var(--layout-section-half-width);
+  position:sticky;
+  height:fit-content;
+  flex-grow:2;
+}
+
+@media (max-width: 1180px) {
+  .server-filters, .server-list {
+    flex-basis:100%;
+  }
+
+  .server-filters {
+    order:1;
+  }
+
+  .server-list {
+    order:2;
+  }
+}
+
+
+.server-list-search-bar {
+  display:flex;
+  transition: 0.2s ease-in-out;
+  padding: 20px;
+  background:var(--primary-color);
+  border:1px solid var(--secondary-color);
+  width: 100%;
+  border-radius: 4px;
+}
+
+.server-list-search-bar i{
+  position:relative;
+  top:5px;
+  color:var(--text-color-logo);
+  font-size:24px;
+}
+
+.server-list-search-bar input {
+  flex-basis:90%;
+  background:var(--primary-color);
+  padding:10px;
+  border:0;
+  outline:0;
+  width:100%;
+}
+
+
+.server-list-search-bar input[type=text], input::placeholder {
+  color:#cce9ff;
+  font-family:"Rubik", serif;
+}
+
+
+
+
+.server-list-search-bar {
+  flex-basis:100%;
+}
+
+.server-list h1 {
   color: var(--text-color);
-  font-family: "Rubik";
+  font-family: "Rubik", serif;
   font-weight: 500;
 }
 
-.serverList li  {
+.server-list li  {
   padding: 15px;
   margin-top: 10px;
   color: var(--text-color);
@@ -26,28 +83,16 @@
   transition:0.3s ease-in-out;
 }
 
-
-.serverList ul {
+.server-list ul {
   list-style: none;
 }
 
-.serverList .searchBar input {
-  transition: 0.2s ease-in-out;
-  font-family:Rubik;
-  padding: 20px;
-  background: #0d1116 !important;
-  color: var(--text-color);
-  width: 100%;
-  color:#fff;
-  border:0px;
-  border-radius: 4px; 
-}
 
-.serverList .searchBar input:focus-visible {
+.server-list .server-list-search-bar input:focus-visible {
   outline:0;
 }
 
-.serverList .pagination {
+.server-list .pagination {
   position: sticky;
   bottom: 10px;
   background: #0d1116;
@@ -55,12 +100,12 @@
   padding: 15px;
 }
 
-.serverList .pagination span {
+.server-list .pagination span {
   color:#fff;
   line-height: 40px;
 }
 
-.serverList .pagination .pagination-buttons button {
+.server-list .pagination .pagination-buttons button {
   transition:0.1s ease-in-out;
   border-radius:1000px;
   padding-left:20px;
@@ -70,32 +115,26 @@
   border:0px;
 }
 
-.serverList .pagination .pagination-buttons button:hover {
+.server-list .pagination .pagination-buttons button:hover {
   background: var(--accent-color-hover);
 }
 
-.serverList .pagination i {
+.server-list .pagination i {
   position: relative;
   top:2px;
 }
 
 
-.serverList .pagination button {
+.server-list .pagination button {
   background: var(--accent-color);
   color: var(--text-color);
 }
 
-
-.serverList .pagination button:disabled {
+.server-list .pagination button:disabled {
   background: #2b2e54 !important;
   color: #888;
 }
 
-
-.searchInputs {
-  display: flex;
-  align-items: center;
-}
 
 .searchInputs select {
   background: var(--primary-color);
@@ -121,28 +160,21 @@
   padding: 12px;
 }
 
-.serverListContainer {
+.server-listContainer {
   display:flex;
   flex-direction: row;
   gap:20px;
 }
 
-.serverList {
-  padding: 20px;
-  background: var(--primary-color);
-  border: 1px solid var(--secondary-color);
-  border-radius: 4px;
+.server-list {
   flex-grow:2;
 }
 
-.serverFilters {
-  height:400px;
+.server-filters {
   background: var(--primary-color);
   border: 1px solid var(--secondary-color);
   border-radius: 4px;
   padding:20px;
-  flex-grow:0;
-  width:300px;
 }
 
 .server-info {
@@ -154,7 +186,7 @@
   position: absolute;
   bottom: 7px;
   left: 15px;
-  color: rgb(110 109 109);
+  color:#49708d;
   font-size: 12px;
 }
 
@@ -165,7 +197,7 @@
   padding-left:12px;
   padding-right:12px;
   margin-right:5px;
-  color:var(--text-color-primary);
+  color:var(--text-color-logo);
 
 }
 
@@ -173,12 +205,12 @@
   margin-left:-5px;
 }
 
-.serverList li {
+.server-list li {
   position:relative !important;
   border-radius:4px;
 }
 
-.serverList li strong {
+.server-list li strong {
   font-weight:500;
 }
 
@@ -201,11 +233,11 @@
   color:var(--server-status-button-offline-color);
 }
 
-.serverList li.server-status-online {
+.server-list li.server-status-online {
   background-image:var(--server-status-gradient-online);
 }
 
-.serverList li.server-status-offline {
+.server-list li.server-status-offline {
   background-image:var(--server-status-gradient-offline);
 }
 
@@ -222,7 +254,7 @@
   position: relative;
 }
 
-.serverFilters p {
+.server-filters p {
   color:#fff;
   margin-top:20px;
   margin-bottom:10px;
@@ -258,7 +290,7 @@
 }
 
 input:focus-visible {
-  border:0px !important;
+  border:0 !important;
 }
 
 

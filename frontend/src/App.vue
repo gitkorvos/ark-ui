@@ -1,18 +1,17 @@
 <template>
   <div>
     <NavigationBar></NavigationBar>
-    <ServerList></ServerList>
+    <router-view></router-view>
   </div>
+
 </template>
 
 <script>
-import ServerList from './components/ServerList.vue';
 import NavigationBar from './components/NavigationBar.vue';
 
 export default {
   components: {
-    ServerList,
-    NavigationBar,
+    NavigationBar
   },
 };
 </script>
