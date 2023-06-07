@@ -10,7 +10,7 @@ Follow these steps to install and run Ark-UI:
 
 1. Clone this repository to your local machine:
    ```shell
-   git clone https://github.com/your-username/ark-ui.git
+   git clone git@github.com:gitkorvos/ark-ui.git
    ```
 
 2. Navigate to the project directory:
