@@ -1,3 +1,9 @@
+## Requirements
+
+1. Docker Engine
+Download Available: https://www.docker.com/get-started/
+
+
 ## Installation
 
 Follow these steps to install and run Ark-UI:
@@ -22,4 +28,3 @@ Follow these steps to install and run Ark-UI:
    docker compose up
    ```
 
-Note: Replace `your-username` with your GitHub username and `your-ark-node` with the URL or IP address of your Ark node.
