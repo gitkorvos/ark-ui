@@ -83,8 +83,21 @@
         </div>
       </div>
 
-      <div class="server-filters">
-        <div>
+      <div class="layout-sidebar">
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">
+
+          <div class="header-content">
+            <h1 class="section-header small">Filters</h1>
+          </div>
+
+          <div class="header-toggle">
+            <i class="lni lni-angle-double-down"></i>
+          </div>
+
+        </div>
+        <div class="sidebar-widget-content">
           <p>Map Selection</p>
           <Multiselect
             mode="tags"
@@ -95,7 +108,7 @@
             @input="filterServers"
           />
         </div>
-        <div>
+        <div class="sidebar-widget-content">
           <p>Status</p>
           <Multiselect
             mode="single"
@@ -106,7 +119,7 @@
             @input="filterServers"
           />
         </div>
-        <div>
+        <div class="sidebar-widget-content">
           <p>Player Count</p>
           <Multiselect
             mode="single"
@@ -117,7 +130,7 @@
             @input="filterServers"
           />
         </div>
-        <div>
+        <div class="sidebar-widget-content">
           <p>Platform</p>
           <Multiselect
             mode="single"
@@ -129,8 +142,69 @@
           />
         </div>
       </div>
+
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-header">
+
+          <div class="header-content">
+            <h1 class="section-header small">STATS</h1>
+          </div>
+
+          <div class="header-toggle">
+            <i class="lni lni-angle-double-down"></i>
+          </div>
+
+        </div>
+
+        <div class="sidebar-widget-content">
+
+          <div class="stat-widget waves-1">
+            <div class="stat-widget-icon">
+              <i class="lni lni-xbox"></i>
+            </div>
+            <div class="stat-widget-content">
+              <p>Total Xbox Servers</p>
+              <h1>2,049</h1>
+            </div>
+          </div>
+
+          <div class="stat-widget waves-2">
+            <div class="stat-widget-icon">
+              <i class="lni lni-playstation"></i>
+            </div>
+            <div class="stat-widget-content">
+              <p>Total Playstation Servers</p>
+              <h1>1,684</h1>
+            </div>
+          </div>
+
+          <div class="stat-widget waves-3">
+            <div class="stat-widget-icon">
+              <i class="lni lni-network"></i>
+            </div>
+            <div class="stat-widget-content">
+              <p>Total Dedicated Servers</p>
+              <h1>3,580</h1>
+            </div>
+          </div>
+
+          <div class="stat-widget waves-4">
+            <div class="stat-widget-icon">
+              <i class="lni lni-heart-fill"></i>
+            </div>
+            <div class="stat-widget-content">
+              <p>Total Official Servers</p>
+              <h1>5,572</h1>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
     </div>
   </div>
+</div>
+
 </template>
 
 <script>
@@ -280,4 +354,3 @@ export default {
 <style scoped>
 @import "@/assets/css/ServerList.css";
 </style>
-<style src="@vueform/multiselect/themes/default.css"></style>

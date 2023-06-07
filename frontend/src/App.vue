@@ -17,6 +17,8 @@ export default {
 </script>
 
 <style scoped>
+@import '@vueform/multiselect/themes/default.css';
 @import '@/assets/css/Main.css';
+@import '@/assets/css/VueMultiselect.css';
 
 </style>

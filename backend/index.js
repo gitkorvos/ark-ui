@@ -31,7 +31,7 @@ app.use((err, req, res, next) => {
 });
 
 fetchDataAndUpdateServerModel()
-const task = setInterval(fetchDataAndUpdateServerModel, 600000); // 10 Mins
+const task = setInterval(fetchDataAndUpdateServerModel, 600000); // 10 Minutes
 
 (async () => {
   try {

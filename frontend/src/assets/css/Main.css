@@ -27,6 +27,17 @@ body {
 
 .layout-header-section {
     flex-basis:100%;
+    margin-top:50px;
+    margin-bottom:40px;
+}
+
+.layout-sidebar {
+  display:flex;
+  flex-basis:30%;
+  flex-wrap:wrap;
+  align-content:flex-start;
+  gap:20px;
+
 }
 
 .layout-content-section {
@@ -40,15 +51,77 @@ body {
     color: var(--text-color-secondary);
     font-weight: 300;
     text-transform: uppercase;
-    margin-top: 50px;
-    margin-bottom: 10px;
     font-size: 25px;
+
+}
+
+.section-header.small {
+  font-size:18px;
+}
+
+
+.stat-widget {
+  border-radius:4px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+
+  margin-bottom:20px;
+  display:flex;
+
+  transition:0.5s ease-in-out;
+
+  background-position-x:30%;
+  background-position-y:20%;
+
+  &:hover {
+    background-position-x:60%;
+  }
+
+  & .stat-widget-content {
+    flex-basis:50%;
+    text-align: right;
+    padding:30px;
+  }
+
+  & .stat-widget-icon {
+    flex-basis:50%;
+    padding-left:10px;
+    padding-right:10px;
+    position: relative;
+    text-align: center;
+
+    & i {
+      position:relative;
+      top:50%;
+      transform:translateY(-50%);
+      font-size:48px;
+
+    }
+  }
+}
+
+
+.waves-1 {
+  background-image: url(../xbox-waves.svg);
+}
+
+.waves-2 {
+  background-image: url(../ps4-waves.svg);
+}
+
+.waves-3 {
+  background-image: url(../pink-waves.svg);
+}
+
+.waves-4 {
+  background-image: url(../purple-waves.svg);
 }
 
 :root {
 
-    --nav-width: 200px;
-    --page-padding: 100px;
+    --nav-width: 220px;
+    --page-padding: 80px;
+
+    /* Computed Values */
 
     --layout-content-flex-gap: 20px;
 
@@ -57,11 +130,12 @@ body {
     --page-width: calc(100% - --page-width-negative);
     --page-width-negative: --navwidth + calc(--page-padding * 2);
 
+    /* Theme */
 
     --primary-color: #161C23;
     --secondary-color: #1a222a;
     --accent-color: #5865F2;
-    --accent-color-hover: #0062cc;
+    --accent-color-hover: #929bff;
     --text-color: #fff;
     --text-color-logo: #43c2ff;
     --text-color-primary: #7c97b9;

@@ -1,20 +1,28 @@
 <template>
-  <div class="container">
-    <h1 class="section-header">Server View</h1>
+  <transition name="fade" mode="out-in">
+  <div class="page">
+    <div class="layout-header-section">
+      <h1 class="section-header">Server View</h1>
+    </div>
+
     <div class="route-navigation">
       <router-link :to="'/'" class="no-link-styles"><i class="lni lni-home"></i> Server List</router-link><span> // </span><router-link :to="'/server/' + uuid" class="no-link-styles">{{server.data.name}}</router-link>
     </div>
-    <div class="content-container">
-      <pre>Data {{JSON.stringify(server.data, null, 2)}}</pre> <!-- Here is how you would display a property from the server object -->
-      <!-- Other content -->
+    <div class="layout-content-section">
+      <pre>Info {{JSON.stringify(server.data[0], null, 2)}}</pre>
+      <pre>History {{JSON.stringify(server.data[1], null, 2)}}</pre>
     </div>
   </div>
+
+
+  </transition>
 </template>
 
 <script>
 import { computed, onMounted, reactive } from "vue";
 import { useRoute } from "vue-router";
 import axios from "axios";
+
 
 export default {
   setup() {
@@ -23,16 +31,14 @@ export default {
     const server = reactive({ uuid: "", data: [] }); // Initialize the server object with reactive
 
     const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:3000/api/server/${uuid.value}`
-        );
-        server.uuid = uuid.value;
-        server.data = response.data;
-        console.log(server)
-      } catch (error) {
-        console.error(error);
-      }
+
+      const server_data_response = await axios.get(`http://localhost:3000/api/server/${uuid.value}`);
+      const server_history_response = await axios.get(`http://localhost:3000/api/server-history/${uuid.value}`);
+
+      server.uuid = uuid.value;
+
+      server.data = [server_data_response.data, server_history_response.data]
+
     };
 
     onMounted(() => {

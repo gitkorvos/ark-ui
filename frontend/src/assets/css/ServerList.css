@@ -6,19 +6,74 @@
   flex-grow:2;
 }
 
-.server-filters {
-  flex-basis:var(--layout-section-half-width);
+.sidebar-widget {
+  background: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  flex-basis:100%;
   position:sticky;
   height:fit-content;
-  flex-grow:2;
+  border-radius: 4px;
+
+  & .sidebar-widget-content {
+    color:#fff;
+
+    & p {
+      margin-bottom:5px;
+    }
+  }
+
+  & .sidebar-widget-header {
+    display:flex;
+    & .header-content {
+      flex-basis:90%;
+      
+      & h1 {
+        position:relative;
+        top:50%;
+        transform:translateY(-50%);
+      }
+    }
+
+    & .header-toggle {
+      position:relative;
+      flex-basis:10%;
+      padding-left:10px;
+      padding-right:10px;
+      color:#fff;
+      text-align:right;
+
+      & i {
+        position:relative;
+        top:50%;
+        transform:translateY(-50%);
+        font-size:18px;
+
+        padding:8px;
+        background:var(--accent-color);
+        border-radius:1000px;
+      }
+    }
+  }
+
+
+  & .sidebar-widget-header, .sidebar-widget-content {
+      padding:20px;
+      border-bottom:1px solid var(--secondary-color);
+
+      & p {
+        margin-top:0;
+        }
+    }
+
 }
 
+
 @media (max-width: 1180px) {
-  .server-filters, .server-list {
+  .layout-sidebar, .server-list {
     flex-basis:100%;
   }
 
-  .server-filters {
+  .layout-sidebar {
     order:1;
   }
 
@@ -83,6 +138,10 @@
   transition:0.3s ease-in-out;
 }
 
+.server-list li:first-child {
+  margin-top:0;
+}
+
 .server-list ul {
   list-style: none;
 }
@@ -92,48 +151,47 @@
   outline:0;
 }
 
-.server-list .pagination {
+.pagination {
   position: sticky;
-  bottom: 10px;
-  background: #0d1116;
-  border-radius: 4px;
-  padding: 15px;
-}
-
-.server-list .pagination span {
-  color:#fff;
-  line-height: 40px;
-}
-
-.server-list .pagination .pagination-buttons button {
-  transition:0.1s ease-in-out;
-  border-radius:1000px;
-  padding-left:20px;
-  padding-right:20px;
-  padding:10px;
-  min-width:100px;
-  border:0px;
-}
-
-.server-list .pagination .pagination-buttons button:hover {
-  background: var(--accent-color-hover);
-}
-
-.server-list .pagination i {
-  position: relative;
-  top:2px;
-}
+  bottom: 0;
+  background: #090c0e;
+  padding: 10px;
 
 
-.server-list .pagination button {
-  background: var(--accent-color);
-  color: var(--text-color);
+  & span {
+    color:#fff;
+    line-height: 40px;
+  }
+
+  & i {
+    position:relative;
+    top:2px;
+  }
+
+  & .pagination-buttons {
+    & button {
+      transition:0.1s ease-in-out;
+      border-radius:4px;
+      padding-left:20px;
+      padding-right:20px;
+      padding:8px;
+      border:0px;
+      background: var(--accent-color);
+      color: var(--text-color);
+
+      &:hover {
+        background: var(--accent-color-hover);
+      }
+
+      &:disabled {
+        background: #2b2e54 !important;
+        color: #888;
+      }
+
+    }
+  }
 }
 
-.server-list .pagination button:disabled {
-  background: #2b2e54 !important;
-  color: #888;
-}
 
 
 .searchInputs select {
@@ -170,12 +228,7 @@
   flex-grow:2;
 }
 
-.server-filters {
-  background: var(--primary-color);
-  border: 1px solid var(--secondary-color);
-  border-radius: 4px;
-  padding:20px;
-}
+
 
 .server-info {
   margin-top:15px;
@@ -258,43 +311,4 @@
   color:#fff;
   margin-top:20px;
   margin-bottom:10px;
-}
-
-
-.multiselect, .multiselect .is-active {
-  background:#0d1116 !important;
-  border:0px !important;
-  outline:0px !important;
-  box-shadow:none !important;
-}
-
-
-.multiselect-tags-search {
-  border:0px !important;
-  background:#0d1116 !important;
-}
-
-.multiselect-option:hover {
-  color:#fff !important;
-  background: var(--accent-color) !important;
-}
-
-.multiselect-tag {
-  background: var(--accent-color) !important;
-}
-
-.multiselect-dropdown {
-  background:#0d1116 !important;
-  border:0px !important;
-  color:#fff !important;
-}
-
-input:focus-visible {
-  border:0 !important;
-}
-
-
-.multiselect-option.is-pointed {
-  background:none !important;
-  color:#fff !important;
 }
