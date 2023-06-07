@@ -14,12 +14,12 @@ Follow these steps to install and run Ark-UI:
 
 3. Build the Docker image:
    ```shell
-   docker build -t ark-ui .
+   docker compose build
    ```
 
 4. Run the Docker container:
    ```shell
-   docker run -d -p 8080:80 --name ark-ui-container -e ARK_NODE_URL=http://your-ark-node:4003 ark-ui
+   docker compose up
    ```
 
 Note: Replace `your-username` with your GitHub username and `your-ark-node` with the URL or IP address of your Ark node.
