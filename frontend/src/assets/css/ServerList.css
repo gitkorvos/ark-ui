@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap');
 
 
-.server-list {
-  flex-basis:var(--layout-section-half-width);
-  flex-grow:2;
-}
+
 
 .sidebar-widget {
   background: var(--primary-color);
@@ -16,6 +13,7 @@
 
   & .sidebar-widget-content {
     color:#fff;
+    padding:20px;
 
     & p {
       margin-bottom:5px;
@@ -26,6 +24,7 @@
     display:flex;
     & .header-content {
       flex-basis:90%;
+      padding:20px;
       
       & h1 {
         position:relative;
@@ -35,12 +34,20 @@
     }
 
     & .header-toggle {
+      transition:0.1s ease-in-out;
       position:relative;
-      flex-basis:10%;
-      padding-left:10px;
-      padding-right:10px;
-      color:#fff;
+      padding-left:20px;
+      padding-right:20px;
+      color:var(--text-color-logo);
       text-align:right;
+      border-left:1px var(--secondary-color) dotted;     
+      background:var(--primary-color-offset-1);
+
+      &:hover {
+        cursor:pointer;
+        color:var(--text-color-logo-hover);
+        background-color:rgba(255, 255, 255, 0.02);
+      }
 
       & i {
         position:relative;
@@ -48,17 +55,13 @@
         transform:translateY(-50%);
         font-size:18px;
 
-        padding:8px;
-        background:var(--accent-color);
-        border-radius:1000px;
       }
     }
   }
 
 
   & .sidebar-widget-header, .sidebar-widget-content {
-      padding:20px;
-      border-bottom:1px solid var(--secondary-color);
+    border-bottom:1px solid var(--secondary-color);
 
       & p {
         margin-top:0;
@@ -85,70 +88,91 @@
 
 .server-list-search-bar {
   display:flex;
+  flex-basis:100%;
   transition: 0.2s ease-in-out;
   padding: 20px;
   background:var(--primary-color);
   border:1px solid var(--secondary-color);
   width: 100%;
   border-radius: 4px;
-}
 
-.server-list-search-bar i{
-  position:relative;
-  top:5px;
-  color:var(--text-color-logo);
-  font-size:24px;
-}
+  & i {
+    position:relative;
+    top:5px;
+    color:var(--text-color-logo);
+    font-size:24px;
+  }
 
-.server-list-search-bar input {
-  flex-basis:90%;
-  background:var(--primary-color);
-  padding:10px;
-  border:0;
-  outline:0;
-  width:100%;
-}
+  & input {
+    flex-basis:90%;
+    background:var(--primary-color);
+    padding:10px;
+    border:0;
+    outline:0;
+    width:100%;
 
+    &::placeholder {
+      color:#cce9ff;
+      font-family:"Rubik", serif;
+    }
+  }
 
-.server-list-search-bar input[type=text], input::placeholder {
-  color:#cce9ff;
-  font-family:"Rubik", serif;
-}
+  & input[type=text] {
+    color:#cce9ff;
+    font-family:"Rubik", serif;
+  }
 
-
-
-
-.server-list-search-bar {
-  flex-basis:100%;
-}
-
-.server-list h1 {
-  color: var(--text-color);
-  font-family: "Rubik", serif;
-  font-weight: 500;
-}
-
-.server-list li  {
-  padding: 15px;
-  margin-top: 10px;
-  color: var(--text-color);
-  font-family: "Rubik";
-  font-weight: 300;
-  cursor:pointer;
-  transition:0.3s ease-in-out;
-}
-
-.server-list li:first-child {
-  margin-top:0;
-}
-
-.server-list ul {
-  list-style: none;
+  
+  & input:focus-visible {
+    outline:0;
+  }
 }
 
 
-.server-list .server-list-search-bar input:focus-visible {
-  outline:0;
+
+.server-list {
+  flex-basis:var(--layout-section-half-width);
+  flex-grow:2;
+
+  & ul {
+    list-style:none;
+  }
+
+  & li {
+    padding: 15px;
+    margin-top: 10px;
+    color: var(--text-color);
+    font-family: "Rubik";
+    font-weight: 300;
+    cursor:pointer;
+    transition:0.3s ease-in-out;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.03);
+    
+    position:relative !important;
+    border-radius:4px;
+
+  & strong {
+    font-weight:500;
+  }
+
+    &:first-child {
+      margin-top:0;
+    }
+  }
+
+  & h1 {
+    color: var(--text-color);
+    font-family: "Rubik", serif;
+    font-weight: 500;
+  }
+
+  & .server-widget {
+    background:var(--primary-color);
+  
+    &:hover {
+      background:var(--primary-color-offset-1);
+    }
+  }
 }
 
 .pagination {
@@ -156,6 +180,9 @@
   bottom: 0;
   background: #090c0e;
   padding: 10px;
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
 
 
   & span {
@@ -169,6 +196,10 @@
   }
 
   & .pagination-buttons {
+    display: flex;
+    align-items: center;
+    gap:10px;
+
     & button {
       transition:0.1s ease-in-out;
       border-radius:4px;
@@ -193,7 +224,6 @@
 }
 
 
-
 .searchInputs select {
   background: var(--primary-color);
   border: 1px solid var(--text-color-secondary);
@@ -201,39 +231,12 @@
   appearance: none;
 }
 
-.pagination-buttons {
-  display: flex;
-  align-items: center;
-  gap:10px;
-}
-
-.pagination {
-  margin-top: 1em;
-  display: flex;
-  justify-content: space-between;
-}
 
 .mapSelector {
   margin-left: 10px;
   padding: 12px;
 }
 
-.server-listContainer {
-  display:flex;
-  flex-direction: row;
-  gap:20px;
-}
-
-.server-list {
-  flex-grow:2;
-}
-
-
-
-.server-info {
-  margin-top:15px;
-  margin-bottom:20px;
-}
 
 .server-last-updated {
   position: absolute;
@@ -243,28 +246,29 @@
   font-size: 12px;
 }
 
-.server-info span {
-  background:rgba(255,255,255,0.05);
-  border-radius:1000px;
-  padding:8px;
-  padding-left:12px;
-  padding-right:12px;
-  margin-right:5px;
-  color:var(--text-color-logo);
+.server-info {
+  margin-top:15px;
+  margin-bottom:20px;
 
-}
+  & span {
+    background:rgba(255,255,255,0.05);
+    border-radius:1000px;
+    padding:8px;
+    padding-left:12px;
+    padding-right:12px;
+    margin-right:5px;
+    color:var(--text-color-logo);
+  }
 
-.server-info span:first-child {
-  margin-left:-5px;
-}
+  &:first-child {
+    margin-left:-5px;
+  }
 
-.server-list li {
-  position:relative !important;
-  border-radius:4px;
-}
-
-.server-list li strong {
-  font-weight:500;
+  & i {
+    top: 2px;
+    margin-right: 2px;
+    position: relative;
+  }
 }
 
 .server-status {
@@ -276,39 +280,9 @@
   padding:5px;
   border-radius: 4px;
 
-}
-
-.server-status .server-status-online {
-  color:var(--server-status-button-online-color);
-}
-
-.server-status .server-status-offline {
-  color:var(--server-status-button-offline-color);
-}
-
-.server-list li.server-status-online {
-  background-image:var(--server-status-gradient-online);
-}
-
-.server-list li.server-status-offline {
-  background-image:var(--server-status-gradient-offline);
-}
-
-
-.server-status i {
-  top: 3px;
-  margin-right: 5px;
-  position: relative;
-}
-
-.server-info i {
-  top: 2px;
-  margin-right: 2px;
-  position: relative;
-}
-
-.server-filters p {
-  color:#fff;
-  margin-top:20px;
-  margin-bottom:10px;
+  & i {
+    top: 3px;
+    margin-right: 5px;
+    position: relative;
+  }
 }

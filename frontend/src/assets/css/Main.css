@@ -67,13 +67,17 @@ body {
   margin-bottom:20px;
   display:flex;
 
-  transition:0.5s ease-in-out;
+  transition: border 0.2s ease-in-out, background-position 0.5s ease-in-out;
 
-  background-position-x:30%;
-  background-position-y:20%;
+
+  background-position-x:60%;
+  background-position-y:35%;
+
+  border-bottom: 4px solid rgb(255 255 255 / 35%);
 
   &:hover {
-    background-position-x:60%;
+    border-bottom: 4px solid rgb(255 255 255 / 70%);
+    background-position-x:20%;
   }
 
   & .stat-widget-content {
@@ -133,13 +137,25 @@ body {
     /* Theme */
 
     --primary-color: #161C23;
+    --primary-color-offset-1: #151a20;
+
     --secondary-color: #1a222a;
+    --tertiary-color: #1f2732;
+
     --accent-color: #5865F2;
     --accent-color-hover: #929bff;
+
     --text-color: #fff;
-    --text-color-logo: #43c2ff;
+
+
+    --text-color-logo: #42c3ff;
+    --text-color-logo-hover: #82d7ff;
+
+
     --text-color-primary: #7c97b9;
     --text-color-secondary: #4e5e72;
+
+
     --server-status-gradient-online:linear-gradient(to right, #161C23, #161C23 83%, rgb(0 255 114 / 8%));
     --server-status-gradient-offline:linear-gradient(to right, #161C23, #161C23 83%, rgb(255 78 78 / 9%));
     --server-status-button-online-bg:#b3ffb20a;

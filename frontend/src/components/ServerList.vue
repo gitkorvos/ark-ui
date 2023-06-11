@@ -21,12 +21,7 @@
           <li
             v-for="server in displayedServers"
             :key="server.id"
-            :class="[
-              {
-                'server-status-online': isServerOnline(server.updated_at),
-                'server-status-offline': !isServerOnline(server.updated_at),
-              },
-            ]"
+            class="server-widget"
           >
             <router-link :to="`/server/${server.id}`" class="no-link-styles">
               <div>
@@ -163,7 +158,7 @@
               <i class="lni lni-xbox"></i>
             </div>
             <div class="stat-widget-content">
-              <p>Total Xbox Servers</p>
+              <p>Xbox Servers</p>
               <h1>2,049</h1>
             </div>
           </div>
@@ -173,7 +168,7 @@
               <i class="lni lni-playstation"></i>
             </div>
             <div class="stat-widget-content">
-              <p>Total Playstation Servers</p>
+              <p>Playstation Servers</p>
               <h1>1,684</h1>
             </div>
           </div>
@@ -183,7 +178,7 @@
               <i class="lni lni-network"></i>
             </div>
             <div class="stat-widget-content">
-              <p>Total Dedicated Servers</p>
+              <p>Dedicated Servers</p>
               <h1>3,580</h1>
             </div>
           </div>
@@ -193,7 +188,7 @@
               <i class="lni lni-heart-fill"></i>
             </div>
             <div class="stat-widget-content">
-              <p>Total Official Servers</p>
+              <p>Official Servers</p>
               <h1>5,572</h1>
             </div>
           </div>
