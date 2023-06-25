@@ -4,8 +4,8 @@
 
 
 .sidebar-widget {
-  background: var(--primary-dark-color);
-  border:var(--border-dark);
+  background: var(--primary-color);
+  border:var(--border);
   flex-basis:100%;
   position:sticky;
   height:fit-content;
@@ -40,7 +40,7 @@
       padding-right:20px;
       color:var(--text-color-logo);
       text-align:right;
-      border-left:var(--border-dark);
+      border-left:var(--border);
 
       &:hover {
         cursor:pointer;
@@ -60,7 +60,7 @@
 
 
   & .sidebar-widget-header, .sidebar-widget-content {
-    border-bottom:var(--border-dark);
+    border-bottom:var(--border);
 
       & p {
         margin-top:0;
@@ -90,8 +90,8 @@
   flex-basis:100%;
   transition: 0.2s ease-in-out;
   padding: 20px;
-  background:var(--primary-dark-color);
-  border:var(--border-dark);
+  background:var(--primary-color);
+  border:var(--border);
   width: 100%;
   border-radius: 4px;
 
@@ -166,7 +166,7 @@
   }
 
   & .server-widget {
-    background:var(--primary-dark-color);
+    background:var(--primary-color);
   
     &:hover {
       background:var(--primary-color-offset-1);

@@ -7,9 +7,9 @@
 
   /*background: #090c0e;*/
 
-  background:var(--primary-dark-color);
+  background:var(--primary-color);
 
-  border-right: var(--border-dark);
+  border-right: var(--border);
   font-family: "Rubik", serif;
   top:0;
   transition: transform 0.3s ease-in-out;
@@ -106,6 +106,6 @@
 
 }
 .navbar-section, .navbar-logo {
-  border-bottom:var(--border-dark);
+  border-bottom:var(--border);
 }
 

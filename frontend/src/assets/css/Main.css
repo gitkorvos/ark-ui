@@ -4,7 +4,7 @@
     }
 
 body {
-    background-color:var(--base-dark-color);
+    background-color:var(--base-color);
 }
 
 
@@ -120,6 +120,28 @@ body {
   background-image: url(../purple-waves.svg);
 }
 
+:root.light-theme {
+  --primary-color:#fff;
+  --secondary-color:#eee;
+  --tertiary-color:#0D0D0D;
+
+  --base-color:#e1e1e1;
+  --border:1px solid #dbd8d8;
+
+  --primary-text: #111;
+  --secondary-text: #222;
+  --tertiary-text: #333;
+}
+
+:root.dark-theme {
+  --primary-color:#141414;
+  --secondary-color:#111;
+  --tertiary-color:#0D0D0D;
+
+  --base-color:#0e0e0e;
+  --border:1px solid #1e1e1e;
+}
+
 :root {
 
     --nav-width: 220px;
@@ -135,19 +157,6 @@ body {
     --page-width-negative: --navwidth + calc(--page-padding * 2);
 
     /* Theme */
-
-    --primary-dark-color:#141414;
-    --secondary-dark-color:#111;
-    --tertiary-dark-color:#0D0D0D;
-
-    --base-dark-color:#0e0e0e;
-    --border-dark:1px solid #1e1e1e;
-
-    --primary-color: #161C23;
-    --primary-color-offset-1: #151a20;
-
-    --secondary-color: #1a222a;
-    --tertiary-color: #1f2732;
 
     --accent-color: #5865F2;
     --accent-color-hover: #929bff;
