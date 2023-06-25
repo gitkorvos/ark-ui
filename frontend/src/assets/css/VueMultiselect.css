@@ -1,6 +1,6 @@
 
 .multiselect, .multiselect .is-active, .multiselect-search {
-    background:#0d1116 !important;
+    background:var(--tertiary-dark-color);
     border:0px !important;
     outline:0px !important;
     box-shadow:none !important;
@@ -9,7 +9,7 @@
   
   .multiselect-tags-search {
     border:0px !important;
-    background:#0d1116 !important;
+    background:inherit;
   }
   
   .multiselect-wrapper {
@@ -27,7 +27,7 @@
   }
   
   .multiselect-dropdown {
-    background:#0d1116 !important;
+    background:var(--tertiary-dark-color);
     border:0px !important;
     color:#fff !important;
   }

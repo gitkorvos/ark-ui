@@ -4,7 +4,7 @@
     }
 
 body {
-    background-color:#0D1116;
+    background-color:var(--base-dark-color);
 }
 
 
@@ -135,6 +135,13 @@ body {
     --page-width-negative: --navwidth + calc(--page-padding * 2);
 
     /* Theme */
+
+    --primary-dark-color:#141414;
+    --secondary-dark-color:#111;
+    --tertiary-dark-color:#0D0D0D;
+
+    --base-dark-color:#0e0e0e;
+    --border-dark:1px solid #1e1e1e;
 
     --primary-color: #161C23;
     --primary-color-offset-1: #151a20;

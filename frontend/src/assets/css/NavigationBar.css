@@ -4,8 +4,12 @@
   position:fixed;
   width:220px;
   height:100%;
-  background: #090c0e;
-  border-right: 1px solid var(--secondary-color);
+
+  /*background: #090c0e;*/
+
+  background:var(--primary-dark-color);
+
+  border-right: var(--border-dark);
   font-family: "Rubik", serif;
   top:0;
   transition: transform 0.3s ease-in-out;
@@ -102,6 +106,6 @@
 
 }
 .navbar-section, .navbar-logo {
-  border-bottom:1px solid var(--secondary-color);
+  border-bottom:var(--border-dark);
 }
 
